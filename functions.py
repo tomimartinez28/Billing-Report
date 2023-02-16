@@ -1,5 +1,5 @@
+from datetime import datetime
 
-""" file = '/Users/tomasmartinez/Documents/FACTURAS/27206517382_012_00007_00003125.pdf' """
 
 def doc_type_function(file):
     doc_type_cod = file.split('_')[1]
@@ -13,5 +13,9 @@ def doc_type_function(file):
         return 'NOTA DE DEBITO'
 
 
+def date_converter(date_string):
+    return datetime.strptime(date_string, '%d/%m/%Y').date()
 
+    
+print(date_converter('22/10/2023'))
 
